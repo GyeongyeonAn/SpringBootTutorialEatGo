@@ -14,10 +14,19 @@ public class Restaurant {
 
     }
 
+    public Restaurant(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
     public Restaurant(Long id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Long getId() {
@@ -36,17 +45,17 @@ public class Restaurant {
         return name + " in " + address;
     }
 
+    public void setMenuItems(List<MenuItem> menuItems) {
+        for (MenuItem menuItem : menuItems){
+            addMenuItem(menuItem);
+        }
+    }
+
     public List<MenuItem> getMenuItems() {
         return menuItems;
     }
 
     public void addMenuItem(MenuItem menuItem) {
         menuItems.add(menuItem);
-    }
-
-    public void setMenuItems(List<MenuItem> menuItems) {
-        for (MenuItem menuItem : menuItems){
-            addMenuItem(menuItem);
-        }
     }
 }
