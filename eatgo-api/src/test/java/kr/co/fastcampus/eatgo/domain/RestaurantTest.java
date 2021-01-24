@@ -7,11 +7,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 @SpringBootTest
+
 class RestaurantTest {
 
     @Test
     public void creation(){
-        Restaurant restaurant = new Restaurant(1004L, "Bob zip", "");
+        Restaurant restaurant = new Restaurant(1004L, "Bob zip", "Seoul");
         assertThat(restaurant.getId(), is(1004L));
         assertThat(restaurant.getName(), is("Bob zip"));
         assertThat(restaurant.getAddress(), is("Seoul"));
