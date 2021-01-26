@@ -43,6 +43,10 @@ public class Restaurant {
         return id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -67,5 +71,10 @@ public class Restaurant {
 
     public void addMenuItem(MenuItem menuItem) {
         menuItems.add(menuItem);
+    }
+
+    public void updateInformation(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 }

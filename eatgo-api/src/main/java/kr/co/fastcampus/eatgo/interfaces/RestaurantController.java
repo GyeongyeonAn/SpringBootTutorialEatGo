@@ -23,7 +23,7 @@ public class RestaurantController {
         return restaurants;
     }
 
-    @GetMapping("/restaurants/{id}")
+    @GetMapping("/restau    rants/{id}")
     public Restaurant detail(@PathVariable Long id){
 
         Restaurant restaurant = restaurantService.getRestaurant(id);
@@ -41,6 +41,14 @@ public class RestaurantController {
 
         URI location = new URI("/restaurants/" + restaurant.getId());
         return ResponseEntity.created(location).body("{}");
+    }
+
+    @PatchMapping("/restaurants/{id}")
+    public String update(@PathVariable Long id, @RequestBody Restaurant resource){
+        String name = resource.getName();
+        String address = resource.getAddress();
+        restaurantService.updateRestaurant(id, name, address);
+        return "{}";
     }
 
 }
