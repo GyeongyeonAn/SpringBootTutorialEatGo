@@ -3,6 +3,7 @@ package kr.co.fastcampus.eatgo.interfaces;
 import kr.co.fastcampus.eatgo.application.RestaurantService;
 import kr.co.fastcampus.eatgo.domain.MenuItem;
 import kr.co.fastcampus.eatgo.domain.Restaurant;
+import kr.co.fastcampus.eatgo.domain.RestaurantNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -52,7 +53,7 @@ public class RestaurantControllerTest {
     }
 
     @Test
-    public void detail() throws Exception {
+    public void detailWithExisted() throws Exception {
 
         MenuItem menuItem = MenuItem.builder()
                 .name("Kimchi")
@@ -89,6 +90,16 @@ public class RestaurantControllerTest {
                 ))
                 .andExpect(content().string(containsString("\"name\":\"Cyber Food\"")
                 ));
+    }
+
+    @Test
+    public void detailWithNotExisted() throws Exception {
+
+        given(restaurantService.getRestaurant(404L))
+                .willThrow(new RestaurantNotFoundException(404L));
+        mvc.perform(get("/restaurants/404"))
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("{}"));
     }
 
     @Test
