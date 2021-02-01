@@ -32,7 +32,7 @@ class ReviewServiceTest {
                 .description("Mat-it-da")
                 .build();
 
-        reviewService.addReview(review);
+        reviewService.addReview(1004L, review);
 
         verify(reviewRepository).save(any());
     }
