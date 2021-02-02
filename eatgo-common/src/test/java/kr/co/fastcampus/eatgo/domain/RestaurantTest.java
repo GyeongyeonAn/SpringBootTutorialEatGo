@@ -1,12 +1,9 @@
 package kr.co.fastcampus.eatgo.domain;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-
-@SpringBootTest
 
 class RestaurantTest {
 
