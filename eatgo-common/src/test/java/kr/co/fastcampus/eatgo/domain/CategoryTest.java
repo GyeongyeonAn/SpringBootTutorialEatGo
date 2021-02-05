@@ -5,12 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-class RegionTest {
+class CategoryTest {
 
     @Test
-    public void creation(){
-        Region region = Region.builder().name("서울").build();
+    public void creation() {
+        Category category = Category.builder().name("Korean Food").build();
 
-        assertThat(region.getName(), is("서울"));
+        assertThat(category.getName(), is("Korean Food"));
     }
+
 }
