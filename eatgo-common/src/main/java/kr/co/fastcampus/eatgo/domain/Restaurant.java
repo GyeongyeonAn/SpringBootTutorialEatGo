@@ -24,6 +24,9 @@ public class Restaurant {
     private Long id;
 
     @NotEmpty
+    private Long categoryId;
+
+    @NotEmpty
     private String name;
 
     @NotEmpty
