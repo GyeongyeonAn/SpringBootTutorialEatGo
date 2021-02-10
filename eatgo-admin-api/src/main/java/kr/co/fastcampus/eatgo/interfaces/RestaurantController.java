@@ -38,8 +38,7 @@ public class RestaurantController {
         Restaurant restaurant = restaurantService.addRestaurant(
                 Restaurant.builder()
                     .name(resource.getName())
-                    .address(resource.getAddress())
-                    .build());
+                    .address(resource.getAddress()).build());
 
         URI location = new URI("/restaurants/" + restaurant.getId());
         return ResponseEntity.created(location).body("{}");

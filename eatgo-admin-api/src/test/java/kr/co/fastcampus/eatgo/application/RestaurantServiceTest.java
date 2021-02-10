@@ -38,6 +38,7 @@ public class RestaurantServiceTest {
 
         Restaurant restaurant = Restaurant.builder()
                 .id(1004L)
+                .categoryId(1L)
                 .name("Bob zip")
                 .address("Seoul")
                 .build();
@@ -82,6 +83,7 @@ public class RestaurantServiceTest {
         Restaurant restaurant = Restaurant.builder()
                 .name("BeRyong")
                 .address("Busan")
+                .categoryId(1L)
                 .build();
 
         Restaurant created = restaurantService.addRestaurant(restaurant);
@@ -95,6 +97,7 @@ public class RestaurantServiceTest {
                 .id(1004L)
                 .name("Bob zip")
                 .address("Seoul")
+                .categoryId(1L)
                 .build();
 
         given(restaurantRepository.findById(1004L))

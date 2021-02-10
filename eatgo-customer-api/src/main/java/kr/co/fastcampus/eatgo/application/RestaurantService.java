@@ -23,7 +23,7 @@ public class RestaurantService {
 
     public List<Restaurant> getRestaurants(String region, Long categoryId) {
         List<Restaurant> restaurants = restaurantRepository
-                .findAllByAddressContainingByCategoryId(region, categoryId);
+                .findAllByAddressContainingAndCategoryId(region, categoryId);
         return restaurants;
     }
 

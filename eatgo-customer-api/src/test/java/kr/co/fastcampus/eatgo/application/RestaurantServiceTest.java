@@ -56,7 +56,7 @@ public class RestaurantServiceTest {
                 .build();
 
         restaurants.add(restaurant);
-        given(restaurantRepository.findAllByAddressContainingByCategoryId(
+        given(restaurantRepository.findAllByAddressContainingAndCategoryId(
                 "Seoul", 1L))
                 .willReturn(restaurants);
 
