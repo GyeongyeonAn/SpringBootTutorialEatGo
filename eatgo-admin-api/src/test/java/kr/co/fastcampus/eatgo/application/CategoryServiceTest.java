@@ -25,7 +25,7 @@ class CategoryServiceTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
 
         categoryService = new CategoryService(categoryRepository);
     }

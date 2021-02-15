@@ -27,7 +27,7 @@ public class RestaurantServiceTest {
 
     @BeforeEach
     public void setUp(){
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
         mockRestaurantRepository();
 
         restaurantService = new RestaurantService(restaurantRepository);

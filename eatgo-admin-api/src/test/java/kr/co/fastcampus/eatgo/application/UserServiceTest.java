@@ -1,17 +1,17 @@
 package kr.co.fastcampus.eatgo.application;
 
-import kr.co.fastcampus.eatgo.domain.CategoryRepository;
 import kr.co.fastcampus.eatgo.domain.User;
+import kr.co.fastcampus.eatgo.domain.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
 class UserServiceTest {
@@ -23,7 +23,8 @@ class UserServiceTest {
 
     @BeforeEach
     public void setUp() {
-        userService = new UserService();
+        MockitoAnnotations.openMocks(this);
+        userService = new UserService(userRepository);
     }
 
     @Test
