@@ -139,4 +139,6 @@ public class RestaurantControllerTest {
                 .content("{\"name\":\"\",\"address\":\"Busan\"}"))
                 .andExpect(status().isBadRequest());
     }
+
+
 }

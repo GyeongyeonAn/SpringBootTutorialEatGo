@@ -48,6 +48,9 @@ public class UserController {
         return "{}";
     }
 
-    // 4. User delete -> level : 0 -> 아무것도 못 함
-    // level (1: customer, 2: restaurant owner, 3: admin)
+    @DeleteMapping("/users/{id}")
+    public String delete(@PathVariable Long id) {
+        userService.deactiveUser(id);
+        return "{}";
+    }
 }
