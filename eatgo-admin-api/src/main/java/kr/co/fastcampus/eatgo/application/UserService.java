@@ -1,7 +1,6 @@
 package kr.co.fastcampus.eatgo.application;
 
-import kr.co.fastcampus.eatgo.domain.User;
-import kr.co.fastcampus.eatgo.domain.UserRepository;
+import kr.co.fastcampus.eatgo.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,9 +34,8 @@ public class UserService {
 
     @Transactional
     public User updateUser(Long id, String email, String name, Long level) {
-
-        // TODO: restaurantService 예외 참고
-        User user = userRepository.findById(id).orElse(null);
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(id));
 
         user.setName(name).setEmail(email).setLevel(level);
 
@@ -46,7 +44,8 @@ public class UserService {
 
     @Transactional
     public User deactiveUser(Long id) {
-        User user = userRepository.findById(id).orElse(null);
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(id));
 
         user.deactivate();
 
