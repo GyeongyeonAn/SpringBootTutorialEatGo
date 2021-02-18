@@ -1,6 +1,6 @@
 package kr.co.fastcampus.eatgo.interfaces;
 
-import kr.co.fastcampus.eatgo.domain.RestaurantNotFoundException;
+import kr.co.fastcampus.eatgo.exception.RestaurantNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

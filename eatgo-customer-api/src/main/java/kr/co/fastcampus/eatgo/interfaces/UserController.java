@@ -27,7 +27,7 @@ public class UserController {
         String password = resource.getPassword();
         User user = userService.registerUser(email, name, password);
 
-        // TODO: 왜 user가 null인지 찾아야함
+        // TODO: error 처리: 왜 null 인가?
         String url = "/users/" + user.getId();
         return ResponseEntity.created(new URI(url)).body("{}");
     }

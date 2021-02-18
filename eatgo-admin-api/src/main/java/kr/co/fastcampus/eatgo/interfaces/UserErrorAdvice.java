@@ -1,6 +1,6 @@
 package kr.co.fastcampus.eatgo.interfaces;
 
-import kr.co.fastcampus.eatgo.exception.RestaurantNotFoundException;
+import kr.co.fastcampus.eatgo.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class RestaurantErrorAdvice {
+public class UserErrorAdvice {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(RestaurantNotFoundException.class)
-    public String handleRestaurantNotFoundException() {
+    @ExceptionHandler(UserNotFoundException.class)
+    public String handleUserNotFoundException() {
         return "{}";
     }
 }

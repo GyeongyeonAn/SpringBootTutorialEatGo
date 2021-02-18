@@ -1,4 +1,4 @@
-package kr.co.fastcampus.eatgo.domain;
+package kr.co.fastcampus.eatgo.exception;
 
 public class RestaurantNotFoundException extends RuntimeException {
 

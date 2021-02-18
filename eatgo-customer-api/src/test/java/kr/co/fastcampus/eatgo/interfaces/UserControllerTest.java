@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class UserControllerTest {
 
     @Autowired
-    MockMvc mvc;
+    private MockMvc mvc;
 
     @MockBean
     private UserService userService;
@@ -32,6 +32,7 @@ class UserControllerTest {
                 .email("tester@example.com")
                 .name("tester")
                 .password("test")
+                .level(1L)
                 .build();
 
         given(userService.registerUser("taster@example.com", "tester", "test"))
