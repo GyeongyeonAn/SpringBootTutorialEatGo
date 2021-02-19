@@ -35,7 +35,7 @@ class UserControllerTest {
                 .level(1L)
                 .build();
 
-        given(userService.registerUser("taster@example.com", "tester", "test"))
+        given(userService.registerUser("tester@example.com", "tester", "test"))
                 .willReturn(mockUser);
 
         mvc.perform(post("/users")
